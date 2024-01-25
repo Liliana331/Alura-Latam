@@ -1,3 +1,4 @@
+/*
 function calcularIMC(altura, peso){
     return peso / Math.pow(altura, 2);
 }
@@ -49,11 +50,99 @@ function tablaMultiplicar(numero){
 
 tablaMultiplicar(5);
 
+*/
+
+/////////////DESAFIO LISTAS
+
+let listaGenerica = [];
+
+let listaNumeros = [5, 7, 4, 4, -4, 0, 1, 100, 8, 2];
+
+let lenguagesDeProgramacion = ['JavaScript', 'C', 'C++', 'Kotlin', 'Python'];
+
+console.log(lenguagesDeProgramacion);
+
+/*
+lenguagesDeProgramacion.push('Java')
+lenguagesDeProgramacion.push('Ruby')
+lenguagesDeProgramacion.push('GoLang')*/
+
+lenguagesDeProgramacion.push('Java', 'Ruby', 'GoLang');
+
+console.log(lenguagesDeProgramacion);
+
+function impresionOrden(array){
+    for(let i = 0; i < array.length; i++){
+        console.log(array[i]);
+    }
+}
+impresionOrden(lenguagesDeProgramacion)
+console.log('\n\n');
+
+function impresionInversa(array){
+    for(let i = array.length - 1; i >= 0; i--){
+        console.log(array[i]);
+    }
+}
+impresionInversa(lenguagesDeProgramacion)
 
 
+function promedioLista(array){
+    let suma = 0;
+    for(let i = 0; i < array.length; i++){
+        suma += array[i];
+    }
+    console.log(`Promedio: ${suma/array.length}`)
+}
+promedioLista(listaNumeros);
 
+function numeroMenorMayor(array){
+    let menor = array[0];
+    let mayor = array[0];
+    for(let i = 0; i < array.length; i++){
+        if(array[i] < menor){
+            menor = array[i];
+        }
+        if(array[i] > mayor){
+            mayor = array[i];
+        }
+    }
+    console.log(`Mayor: ${mayor} Menor: ${menor}`);
+}
+numeroMenorMayor(listaNumeros);
 
+function posicionElemento(array, elemento){
+    for(let i = 0; i < array.length; i++){
+        if(array[i] === elemento){
+             return `El elemento ${elemento} está en la posición ${i}`;
+            //break;
+        }
+    }
+    return -1;
+}
+console.log(posicionElemento(listaNumeros, 100));
+console.log(posicionElemento(lenguagesDeProgramacion, 'Java'));
+console.log(posicionElemento(lenguagesDeProgramacion, 'java'));
 
+let lista1 = [1, 1, 2];
+let lista2 = [2, 1, 2];
 
+function sumaElementos(array1, array2){
+    let nuevoArreglo = [];
+    let suma = 0;
+    for(let i = 0; i < array1.length; i++){
+        nuevoArreglo.push(array1[i] + array2[i]);
+    }
+    console.log(nuevoArreglo);
+}
+sumaElementos(lista1, lista2);
 
-
+function cuadradoLista(array){
+    let nuevoArreglo = [];
+    for(let i = 0; i < array.length; i++){
+        nuevoArreglo.push(array[i] * array[i]);
+    }
+    console.log(nuevoArreglo);
+}
+cuadradoLista(lista1);
+cuadradoLista(lista2);
